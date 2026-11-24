@@ -1,0 +1,24 @@
+{
+  "ridge": {
+    "val": {
+      "rmse": 14.76429699610418,
+      "nasa_score": 13281.325805179866
+    },
+    "test": {
+      "rmse": 15.330723491624626,
+      "nasa_score": 387.4819848391014,
+      "rmse_reduction_vs_baseline_pct": 0.0
+    }
+  },
+  "xgboost": {
+    "val": {
+      "rmse": 13.326742637625781,
+      "nasa_score": 14583.068204165229
+    },
+    "test": {
+      "rmse": 15.229270704862392,
+      "nasa_score": 531.9261107939566,
+      "rmse_reduction_vs_baseline_pct": 0.7
+    }
+  }
+}

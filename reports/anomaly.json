@@ -1,0 +1,25 @@
+{
+  "definition": "first cycle with score > q0.995 of healthy scores for 3 consecutive cycles; lead time = RUL at that cycle; held-out run-to-failure engines",
+  "results": {
+    "iforest": {
+      "engines": 20,
+      "detection_rate": 1.0,
+      "median_lead_time_cycles": 57.5,
+      "p10_lead_time_cycles": 37.1,
+      "p90_lead_time_cycles": 100.40000000000002,
+      "early_alarm_rate": 0.05
+    },
+    "autoencoder": {
+      "engines": 20,
+      "detection_rate": 1.0,
+      "median_lead_time_cycles": 58.5,
+      "p10_lead_time_cycles": 37.5,
+      "p90_lead_time_cycles": 91.60000000000002,
+      "early_alarm_rate": 0.05
+    }
+  },
+  "thresholds": {
+    "iforest": 0.5768586180406996,
+    "autoencoder": 4.6504645347595215
+  }
+}

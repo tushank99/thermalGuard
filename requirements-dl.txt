@@ -1,0 +1,5 @@
+# PyTorch CPU-only build (smaller, free-tier friendly):
+#   pip install -r requirements-dl.txt --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
+torch>=2.4
+onnx>=1.16
+onnxruntime>=1.19

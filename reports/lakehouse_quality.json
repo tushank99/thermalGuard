@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-11-23T19:41:43+00:00",
+  "rows": {
+    "bronze_lines": 266363,
+    "silver_cycles": 265256,
+    "silver_rul_truth": 707,
+    "silver_quarantine": 400,
+    "gold_features": 265256
+  },
+  "assets": 1416,
+  "gold_columns": 109,
+  "quarantine_by_reason": {
+    "bad_token_count": 80,
+    "duplicate_key": 80,
+    "unparseable_value": 80,
+    "sensor_out_of_range": 160
+  },
+  "schema_enforcement": {
+    "rejected": true,
+    "error_type": "AnalysisException",
+    "message": "[DELTA_FAILED_TO_MERGE_FIELDS] Failed to merge fields 'sensor_2' and 'sensor_2'"
+  },
+  "time_travel": {
+    "bronze_rows_version_0": 121836,
+    "bronze_rows_latest": 266363,
+    "bronze_history": [
+      {
+        "version": 0,
+        "operation": "WRITE",
+        "rows_written": "121836"
+      },
+      {
+        "version": 1,
+        "operation": "WRITE",
+        "rows_written": "144527"
+      }
+    ]
+  }
+}

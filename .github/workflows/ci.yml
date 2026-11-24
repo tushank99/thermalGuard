@@ -1,0 +1,30 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  data-quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -r requirements.txt && pip install -e .
+      - name: Download C-MAPSS
+        run: |
+          mkdir -p data/raw && cd data/raw
+          curl -sSL -o outer.zip "https://phm-datasets.s3.amazonaws.com/NASA/6.+Turbofan+Engine+Degradation+Simulation+Data+Set.zip"
+          unzip -q outer.zip && unzip -q "6. Turbofan Engine Degradation Simulation Data Set/CMAPSSData.zip" -d cmapss
+      - name: Ingest + dbt build (tests gate the batch)
+        run: python scripts/run_pipeline.py --skip-train
+
+  api-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -r requirements-serve.txt httpx pytest && pip install -e .
+      - run: pytest -q tests/test_api.py

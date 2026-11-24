@@ -1,0 +1,9 @@
+# GenAI layer (all free: local embeddings + free-tier LLM API)
+langgraph>=0.2.60
+langchain-core>=0.3
+langchain-groq>=0.2          # LLM_PROVIDER=groq   (free tier, GROQ_API_KEY)
+langchain-google-genai>=2.0  # LLM_PROVIDER=gemini (free tier, GOOGLE_API_KEY)
+sentence-transformers>=3.0   # local embeddings, no API cost
+pypdf>=5.0
+langchain-huggingface>=0.1  # RAGAS embeddings wrapper
+ragas>=0.2

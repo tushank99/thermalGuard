@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: fct_asset_cycles
+    description: Labelled asset-cycles with RUL and piecewise-capped RUL target.
+    columns:
+      - name: cycle_key
+        data_tests: [unique, not_null]
+      - name: rul
+        description: Cycles until failure. Never null, never negative.
+        data_tests: [not_null, {in_range: {arguments: {min_value: 0, max_value: 1000}}}]
+      - name: rul_capped
+        data_tests: [not_null, {in_range: {arguments: {min_value: 0, max_value: 125}}}]
+
+  - name: fct_rul_features
+    description: Training/inference feature table consumed by src/thermalguard/train_*.py.
+    data_tests:
+      - has_columns:
+          arguments:
+            columns: [asset_id, split, cycle, rul_capped, sensor_2_mean_w, sensor_21_std_w, sensor_11_delta_w]
+    columns:
+      - name: cycle_key
+        data_tests: [unique, not_null]

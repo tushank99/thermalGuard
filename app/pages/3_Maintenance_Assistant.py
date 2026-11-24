@@ -1,0 +1,60 @@
+"""Maintenance assistant chat (LangGraph RAG): conversation memory + source citations + live engine facts."""
+import uuid
+
+import streamlit as st
+
+from _shared import ART, need
+
+st.set_page_config(page_title="Assistant · ThermalGuard", page_icon="💬", layout="wide")
+st.title("💬 Maintenance assistant")
+st.caption("Answers from the maintenance manual, NASA documentation and maintenance logs, with citations. "
+           "Mention an engine (e.g. *engine 31* or *FD001_test_031*) to pull its live RUL and anomaly status.")
+
+from thermalguard.rag.llm import KEY_VARS, llm_available, provider  # noqa: E402
+
+if not llm_available():
+    st.error(f"No LLM key configured. Add `LLM_PROVIDER={provider()}` and `{KEY_VARS.get(provider(), 'GROQ_API_KEY')}=...` "
+             "to `.env` (free tier), then restart.")
+    st.stop()
+if not need(ART / "rag/vectors.npy", "python -m thermalguard.rag.index"):
+    st.stop()
+
+from thermalguard.rag.graph import ask  # noqa: E402
+
+if "thread_id" not in st.session_state:
+    st.session_state.thread_id, st.session_state.chat = str(uuid.uuid4()), []
+
+with st.sidebar:
+    if st.button("🧹 New conversation"):
+        st.session_state.thread_id, st.session_state.chat = str(uuid.uuid4()), []
+    st.markdown("**Try:**\n- What does a warning status mean?\n- How is engine 31 doing?\n- What should I inspect "
+                "next? *(follow-up)*\n- How do I tell a sensor fault from degradation?")
+
+
+def render(turn: dict) -> None:
+    with st.chat_message(turn["role"]):
+        st.markdown(turn["content"])
+        if turn.get("facts"):
+            st.caption(f"Live engine facts: {turn['facts']}")
+        if turn.get("citations"):
+            with st.expander(f"Sources ({len(turn['citations'])})"):
+                for c in turn["citations"]:
+                    st.markdown(f"**[{c['n']}] {c['source']}**")
+                    st.caption(c["text"][:600] + ("…" if len(c["text"]) > 600 else ""))
+
+
+for turn in st.session_state.chat:
+    render(turn)
+
+if q := st.chat_input("Ask about an engine, a procedure or a sensor…"):
+    st.session_state.chat.append({"role": "user", "content": q})
+    render(st.session_state.chat[-1])
+    with st.spinner("Thinking…"):
+        try:
+            msg = ask(q, thread_id=st.session_state.thread_id)
+            turn = {"role": "assistant", "content": msg.content,
+                    "citations": msg.additional_kwargs.get("citations"), "facts": msg.additional_kwargs.get("asset_facts")}
+        except Exception as e:  # free-tier rate limits etc.
+            turn = {"role": "assistant", "content": f"⚠️ The assistant failed: `{type(e).__name__}: {e}`"}
+    st.session_state.chat.append(turn)
+    render(turn)

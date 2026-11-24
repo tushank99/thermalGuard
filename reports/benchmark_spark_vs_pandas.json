@@ -1,0 +1,20 @@
+{
+  "cpu_cores": 8,
+  "transform": "RUL label + rolling mean/std (w=5,10,30) x 14 sensors",
+  "results": [
+    {
+      "scale": "1x",
+      "rows": 265256,
+      "pyspark_s": 24.77,
+      "pandas_s": 8.09,
+      "speedup_spark_vs_pandas": 0.33
+    },
+    {
+      "scale": "5x",
+      "rows": 1326280,
+      "pyspark_s": 56.25,
+      "pandas_s": 34.7,
+      "speedup_spark_vs_pandas": 0.62
+    }
+  ]
+}

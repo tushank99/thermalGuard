@@ -1,0 +1,240 @@
+{"date": "2026-01-15", "asset_id": "FD001_test_001", "cycle": 10, "technician": "TECH_11", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-19", "asset_id": "FD001_test_001", "cycle": 14, "technician": "TECH_06", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-01-21", "asset_id": "FD001_test_001", "cycle": 16, "technician": "TECH_06", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-01-22", "asset_id": "FD001_test_001", "cycle": 17, "technician": "TECH_10", "note": "Oil sample taken; results within limits."}
+{"date": "2026-02-04", "asset_id": "FD001_test_002", "cycle": 30, "technician": "TECH_08", "note": "Oil sample taken; results within limits."}
+{"date": "2026-02-15", "asset_id": "FD001_test_002", "cycle": 41, "technician": "TECH_02", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-02-17", "asset_id": "FD001_test_002", "cycle": 43, "technician": "TECH_05", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-02-23", "asset_id": "FD001_test_002", "cycle": 49, "technician": "TECH_01", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-01-27", "asset_id": "FD001_test_004", "cycle": 22, "technician": "TECH_02", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-07", "asset_id": "FD001_test_004", "cycle": 92, "technician": "TECH_04", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-04-16", "asset_id": "FD001_test_004", "cycle": 101, "technician": "TECH_02", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-04-17", "asset_id": "FD001_test_004", "cycle": 102, "technician": "TECH_09", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-01-19", "asset_id": "FD001_test_005", "cycle": 14, "technician": "TECH_06", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-06", "asset_id": "FD001_test_005", "cycle": 32, "technician": "TECH_12", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-12", "asset_id": "FD001_test_005", "cycle": 38, "technician": "TECH_09", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-18", "asset_id": "FD001_test_005", "cycle": 44, "technician": "TECH_03", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-25", "asset_id": "FD001_test_006", "cycle": 20, "technician": "TECH_09", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-12", "asset_id": "FD001_test_006", "cycle": 66, "technician": "TECH_01", "note": "Oil sample taken; results within limits."}
+{"date": "2026-03-15", "asset_id": "FD001_test_006", "cycle": 69, "technician": "TECH_10", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-03-25", "asset_id": "FD001_test_006", "cycle": 79, "technician": "TECH_08", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-09", "asset_id": "FD001_test_007", "cycle": 35, "technician": "TECH_11", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-05-08", "asset_id": "FD001_test_007", "cycle": 123, "technician": "TECH_09", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-05-28", "asset_id": "FD001_test_007", "cycle": 143, "technician": "TECH_11", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-06-09", "asset_id": "FD001_test_007", "cycle": 155, "technician": "TECH_07", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-02-03", "asset_id": "FD001_test_008", "cycle": 29, "technician": "TECH_08", "note": "Oil sample taken; results within limits."}
+{"date": "2026-03-06", "asset_id": "FD001_test_008", "cycle": 60, "technician": "TECH_03", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-07", "asset_id": "FD001_test_008", "cycle": 61, "technician": "TECH_01", "note": "Oil sample taken; results within limits."}
+{"date": "2026-04-19", "asset_id": "FD001_test_008", "cycle": 104, "technician": "TECH_09", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-01-16", "asset_id": "FD001_test_009", "cycle": 11, "technician": "TECH_01", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-01-24", "asset_id": "FD001_test_009", "cycle": 19, "technician": "TECH_02", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-30", "asset_id": "FD001_test_009", "cycle": 25, "technician": "TECH_02", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-01", "asset_id": "FD001_test_009", "cycle": 27, "technician": "TECH_09", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-01-18", "asset_id": "FD001_test_012", "cycle": 13, "technician": "TECH_11", "note": "Oil sample taken; results within limits."}
+{"date": "2026-05-22", "asset_id": "FD001_test_012", "cycle": 137, "technician": "TECH_07", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-06-10", "asset_id": "FD001_test_012", "cycle": 156, "technician": "TECH_01", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-06-23", "asset_id": "FD001_test_012", "cycle": 169, "technician": "TECH_02", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-19", "asset_id": "FD001_test_013", "cycle": 45, "technician": "TECH_12", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-04-09", "asset_id": "FD001_test_013", "cycle": 94, "technician": "TECH_09", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-05-10", "asset_id": "FD001_test_013", "cycle": 125, "technician": "TECH_03", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-07-02", "asset_id": "FD001_test_013", "cycle": 178, "technician": "TECH_01", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-08", "asset_id": "FD001_test_015", "cycle": 34, "technician": "TECH_05", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-17", "asset_id": "FD001_test_015", "cycle": 43, "technician": "TECH_12", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-27", "asset_id": "FD001_test_015", "cycle": 53, "technician": "TECH_03", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-03-20", "asset_id": "FD001_test_015", "cycle": 74, "technician": "TECH_03", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-01-18", "asset_id": "FD001_test_017", "cycle": 13, "technician": "TECH_03", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-25", "asset_id": "FD001_test_017", "cycle": 20, "technician": "TECH_08", "note": "Oil sample taken; results within limits."}
+{"date": "2026-03-07", "asset_id": "FD001_test_017", "cycle": 61, "technician": "TECH_12", "note": "Oil sample taken; results within limits."}
+{"date": "2026-04-20", "asset_id": "FD001_test_017", "cycle": 105, "technician": "TECH_07", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-01-26", "asset_id": "FD001_test_018", "cycle": 21, "technician": "TECH_07", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-27", "asset_id": "FD001_test_018", "cycle": 22, "technician": "TECH_09", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-17", "asset_id": "FD001_test_018", "cycle": 43, "technician": "TECH_03", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-03-05", "asset_id": "FD001_test_018", "cycle": 59, "technician": "TECH_07", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-01-31", "asset_id": "FD001_test_019", "cycle": 26, "technician": "TECH_06", "note": "Oil sample taken; results within limits."}
+{"date": "2026-04-15", "asset_id": "FD001_test_019", "cycle": 100, "technician": "TECH_02", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-04-19", "asset_id": "FD001_test_019", "cycle": 104, "technician": "TECH_08", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-26", "asset_id": "FD001_test_019", "cycle": 111, "technician": "TECH_07", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-01-25", "asset_id": "FD001_test_021", "cycle": 20, "technician": "TECH_03", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-01-31", "asset_id": "FD001_test_021", "cycle": 26, "technician": "TECH_08", "note": "Oil sample taken; results within limits."}
+{"date": "2026-03-26", "asset_id": "FD001_test_021", "cycle": 80, "technician": "TECH_05", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-14", "asset_id": "FD001_test_021", "cycle": 99, "technician": "TECH_07", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-02-16", "asset_id": "FD001_test_024", "cycle": 42, "technician": "TECH_08", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-05-11", "asset_id": "FD001_test_024", "cycle": 126, "technician": "TECH_03", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-06-14", "asset_id": "FD001_test_024", "cycle": 160, "technician": "TECH_03", "note": "ThermalGuard warning status acknowledged; HPC blade kit ordered."}
+{"date": "2026-06-23", "asset_id": "FD001_test_024", "cycle": 169, "technician": "TECH_05", "note": "ThermalGuard warning status acknowledged; HPC blade kit ordered."}
+{"date": "2026-01-19", "asset_id": "FD001_test_025", "cycle": 14, "technician": "TECH_04", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-01-20", "asset_id": "FD001_test_025", "cycle": 15, "technician": "TECH_11", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-02", "asset_id": "FD001_test_025", "cycle": 28, "technician": "TECH_01", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-08", "asset_id": "FD001_test_025", "cycle": 34, "technician": "TECH_06", "note": "Oil sample taken; results within limits."}
+{"date": "2026-02-05", "asset_id": "FD001_test_026", "cycle": 31, "technician": "TECH_09", "note": "Oil sample taken; results within limits."}
+{"date": "2026-02-21", "asset_id": "FD001_test_026", "cycle": 47, "technician": "TECH_05", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-21", "asset_id": "FD001_test_026", "cycle": 75, "technician": "TECH_07", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-22", "asset_id": "FD001_test_026", "cycle": 76, "technician": "TECH_04", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-19", "asset_id": "FD001_test_027", "cycle": 14, "technician": "TECH_06", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-08", "asset_id": "FD001_test_027", "cycle": 34, "technician": "TECH_12", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-07", "asset_id": "FD001_test_027", "cycle": 61, "technician": "TECH_11", "note": "Oil sample taken; results within limits."}
+{"date": "2026-04-16", "asset_id": "FD001_test_027", "cycle": 101, "technician": "TECH_09", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-02-20", "asset_id": "FD001_test_030", "cycle": 46, "technician": "TECH_07", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-07", "asset_id": "FD001_test_030", "cycle": 61, "technician": "TECH_02", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-25", "asset_id": "FD001_test_030", "cycle": 79, "technician": "TECH_01", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-05-22", "asset_id": "FD001_test_030", "cycle": 137, "technician": "TECH_07", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-01-16", "asset_id": "FD001_test_031", "cycle": 11, "technician": "TECH_09", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-06", "asset_id": "FD001_test_031", "cycle": 60, "technician": "TECH_11", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-04-21", "asset_id": "FD001_test_031", "cycle": 106, "technician": "TECH_06", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-06-24", "asset_id": "FD001_test_031", "cycle": 170, "technician": "TECH_06", "note": "ThermalGuard warning status acknowledged; HPC blade kit ordered."}
+{"date": "2026-02-11", "asset_id": "FD001_test_032", "cycle": 37, "technician": "TECH_07", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-05", "asset_id": "FD001_test_032", "cycle": 59, "technician": "TECH_01", "note": "Oil sample taken; results within limits."}
+{"date": "2026-04-06", "asset_id": "FD001_test_032", "cycle": 91, "technician": "TECH_03", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-05-29", "asset_id": "FD001_test_032", "cycle": 144, "technician": "TECH_01", "note": "Borescope HPC stages 3/5/7: moderate leading-edge erosion on stage 5; re-inspect in 25 cycles."}
+{"date": "2026-01-26", "asset_id": "FD001_test_033", "cycle": 21, "technician": "TECH_07", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-07", "asset_id": "FD001_test_033", "cycle": 33, "technician": "TECH_12", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-11", "asset_id": "FD001_test_033", "cycle": 37, "technician": "TECH_02", "note": "Oil sample taken; results within limits."}
+{"date": "2026-02-18", "asset_id": "FD001_test_033", "cycle": 44, "technician": "TECH_05", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-24", "asset_id": "FD001_test_036", "cycle": 19, "technician": "TECH_08", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-08", "asset_id": "FD001_test_036", "cycle": 34, "technician": "TECH_01", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-27", "asset_id": "FD001_test_036", "cycle": 112, "technician": "TECH_09", "note": "Engine flagged critical by ThermalGuard; removal planned at next maintenance window."}
+{"date": "2026-05-01", "asset_id": "FD001_test_036", "cycle": 116, "technician": "TECH_03", "note": "ThermalGuard warning status acknowledged; HPC blade kit ordered."}
+{"date": "2026-01-21", "asset_id": "FD001_test_037", "cycle": 16, "technician": "TECH_07", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-09", "asset_id": "FD001_test_037", "cycle": 35, "technician": "TECH_02", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-04-07", "asset_id": "FD001_test_037", "cycle": 92, "technician": "TECH_05", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-04-22", "asset_id": "FD001_test_037", "cycle": 107, "technician": "TECH_06", "note": "Engine flagged critical by ThermalGuard; removal planned at next maintenance window."}
+{"date": "2026-01-19", "asset_id": "FD001_test_039", "cycle": 14, "technician": "TECH_02", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-01-24", "asset_id": "FD001_test_039", "cycle": 19, "technician": "TECH_08", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-01-25", "asset_id": "FD001_test_039", "cycle": 20, "technician": "TECH_06", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-07", "asset_id": "FD001_test_039", "cycle": 33, "technician": "TECH_01", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-01-20", "asset_id": "FD001_test_041", "cycle": 15, "technician": "TECH_09", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-07", "asset_id": "FD001_test_041", "cycle": 61, "technician": "TECH_02", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-03-22", "asset_id": "FD001_test_041", "cycle": 76, "technician": "TECH_02", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-03-24", "asset_id": "FD001_test_041", "cycle": 78, "technician": "TECH_03", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-01-22", "asset_id": "FD001_test_042", "cycle": 17, "technician": "TECH_02", "note": "Oil sample taken; results within limits."}
+{"date": "2026-03-11", "asset_id": "FD001_test_042", "cycle": 65, "technician": "TECH_01", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-03-26", "asset_id": "FD001_test_042", "cycle": 80, "technician": "TECH_09", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-05-19", "asset_id": "FD001_test_042", "cycle": 134, "technician": "TECH_11", "note": "ThermalGuard warning status acknowledged; HPC blade kit ordered."}
+{"date": "2026-02-10", "asset_id": "FD001_test_043", "cycle": 36, "technician": "TECH_09", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-15", "asset_id": "FD001_test_043", "cycle": 41, "technician": "TECH_05", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-05-22", "asset_id": "FD001_test_043", "cycle": 137, "technician": "TECH_04", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-06-13", "asset_id": "FD001_test_043", "cycle": 159, "technician": "TECH_09", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-02-03", "asset_id": "FD001_test_046", "cycle": 29, "technician": "TECH_07", "note": "Oil sample taken; results within limits."}
+{"date": "2026-02-08", "asset_id": "FD001_test_046", "cycle": 34, "technician": "TECH_07", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-04-08", "asset_id": "FD001_test_046", "cycle": 93, "technician": "TECH_06", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-05-13", "asset_id": "FD001_test_046", "cycle": 128, "technician": "TECH_04", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-02-27", "asset_id": "FD001_test_051", "cycle": 53, "technician": "TECH_08", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-12", "asset_id": "FD001_test_051", "cycle": 97, "technician": "TECH_06", "note": "Oil sample taken; results within limits."}
+{"date": "2026-05-08", "asset_id": "FD001_test_051", "cycle": 123, "technician": "TECH_11", "note": "Oil sample taken; results within limits."}
+{"date": "2026-05-27", "asset_id": "FD001_test_051", "cycle": 142, "technician": "TECH_04", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-22", "asset_id": "FD001_test_057", "cycle": 48, "technician": "TECH_08", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-05-07", "asset_id": "FD001_test_057", "cycle": 122, "technician": "TECH_12", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-05-15", "asset_id": "FD001_test_057", "cycle": 130, "technician": "TECH_04", "note": "Oil sample taken; results within limits."}
+{"date": "2026-05-27", "asset_id": "FD001_test_057", "cycle": 142, "technician": "TECH_09", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-01", "asset_id": "FD001_test_058", "cycle": 27, "technician": "TECH_01", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-11", "asset_id": "FD001_test_058", "cycle": 37, "technician": "TECH_01", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-03-30", "asset_id": "FD001_test_058", "cycle": 84, "technician": "TECH_04", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-23", "asset_id": "FD001_test_058", "cycle": 108, "technician": "TECH_08", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-01-18", "asset_id": "FD001_test_060", "cycle": 13, "technician": "TECH_03", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-14", "asset_id": "FD001_test_060", "cycle": 40, "technician": "TECH_12", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-10", "asset_id": "FD001_test_060", "cycle": 95, "technician": "TECH_01", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-29", "asset_id": "FD001_test_060", "cycle": 114, "technician": "TECH_08", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-27", "asset_id": "FD001_test_061", "cycle": 22, "technician": "TECH_02", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-04", "asset_id": "FD001_test_061", "cycle": 30, "technician": "TECH_09", "note": "Oil sample taken; results within limits."}
+{"date": "2026-02-10", "asset_id": "FD001_test_061", "cycle": 36, "technician": "TECH_04", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-05-02", "asset_id": "FD001_test_061", "cycle": 117, "technician": "TECH_12", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-01-17", "asset_id": "FD001_test_062", "cycle": 12, "technician": "TECH_10", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-09", "asset_id": "FD001_test_062", "cycle": 35, "technician": "TECH_04", "note": "Oil sample taken; results within limits."}
+{"date": "2026-04-16", "asset_id": "FD001_test_062", "cycle": 101, "technician": "TECH_11", "note": "Oil sample taken; results within limits."}
+{"date": "2026-06-27", "asset_id": "FD001_test_062", "cycle": 173, "technician": "TECH_06", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-03-11", "asset_id": "FD001_test_064", "cycle": 65, "technician": "TECH_10", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-05-30", "asset_id": "FD001_test_064", "cycle": 145, "technician": "TECH_04", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-06-02", "asset_id": "FD001_test_064", "cycle": 148, "technician": "TECH_11", "note": "Borescope HPC: severe erosion stage 5 and 7, tip clearance increased; recommend removal."}
+{"date": "2026-06-20", "asset_id": "FD001_test_064", "cycle": 166, "technician": "TECH_03", "note": "Borescope HPC: severe erosion stage 5 and 7, tip clearance increased; recommend removal."}
+{"date": "2026-01-25", "asset_id": "FD001_test_065", "cycle": 20, "technician": "TECH_08", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-08", "asset_id": "FD001_test_065", "cycle": 34, "technician": "TECH_10", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-14", "asset_id": "FD001_test_065", "cycle": 40, "technician": "TECH_01", "note": "Oil sample taken; results within limits."}
+{"date": "2026-03-10", "asset_id": "FD001_test_065", "cycle": 64, "technician": "TECH_08", "note": "Oil sample taken; results within limits."}
+{"date": "2026-02-13", "asset_id": "FD001_test_066", "cycle": 39, "technician": "TECH_01", "note": "Oil sample taken; results within limits."}
+{"date": "2026-03-10", "asset_id": "FD001_test_066", "cycle": 64, "technician": "TECH_10", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-04-26", "asset_id": "FD001_test_066", "cycle": 111, "technician": "TECH_01", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-05-02", "asset_id": "FD001_test_066", "cycle": 117, "technician": "TECH_03", "note": "Engine flagged critical by ThermalGuard; removal planned at next maintenance window."}
+{"date": "2026-02-04", "asset_id": "FD001_test_067", "cycle": 30, "technician": "TECH_04", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-22", "asset_id": "FD001_test_067", "cycle": 48, "technician": "TECH_04", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-03-13", "asset_id": "FD001_test_067", "cycle": 67, "technician": "TECH_03", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-03-15", "asset_id": "FD001_test_067", "cycle": 69, "technician": "TECH_03", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-03-27", "asset_id": "FD001_test_068", "cycle": 81, "technician": "TECH_11", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-04-04", "asset_id": "FD001_test_068", "cycle": 89, "technician": "TECH_01", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-04-15", "asset_id": "FD001_test_068", "cycle": 100, "technician": "TECH_03", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-06-10", "asset_id": "FD001_test_068", "cycle": 156, "technician": "TECH_08", "note": "ThermalGuard warning status acknowledged; HPC blade kit ordered."}
+{"date": "2026-01-20", "asset_id": "FD001_test_069", "cycle": 15, "technician": "TECH_07", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-01-22", "asset_id": "FD001_test_069", "cycle": 17, "technician": "TECH_06", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-31", "asset_id": "FD001_test_069", "cycle": 26, "technician": "TECH_12", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-24", "asset_id": "FD001_test_069", "cycle": 50, "technician": "TECH_10", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-24", "asset_id": "FD001_test_072", "cycle": 19, "technician": "TECH_10", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-06", "asset_id": "FD001_test_072", "cycle": 60, "technician": "TECH_04", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-09", "asset_id": "FD001_test_072", "cycle": 63, "technician": "TECH_05", "note": "Oil sample taken; results within limits."}
+{"date": "2026-04-15", "asset_id": "FD001_test_072", "cycle": 100, "technician": "TECH_02", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-02-09", "asset_id": "FD001_test_076", "cycle": 35, "technician": "TECH_01", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-06-11", "asset_id": "FD001_test_076", "cycle": 157, "technician": "TECH_04", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-06-18", "asset_id": "FD001_test_076", "cycle": 164, "technician": "TECH_05", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-06-28", "asset_id": "FD001_test_076", "cycle": 174, "technician": "TECH_10", "note": "Borescope HPC: severe erosion stage 5 and 7, tip clearance increased; recommend removal."}
+{"date": "2026-02-12", "asset_id": "FD001_test_077", "cycle": 38, "technician": "TECH_05", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-03-14", "asset_id": "FD001_test_077", "cycle": 68, "technician": "TECH_06", "note": "Oil sample taken; results within limits."}
+{"date": "2026-05-19", "asset_id": "FD001_test_077", "cycle": 134, "technician": "TECH_03", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-05-22", "asset_id": "FD001_test_077", "cycle": 137, "technician": "TECH_10", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-01-22", "asset_id": "FD001_test_078", "cycle": 17, "technician": "TECH_03", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-26", "asset_id": "FD001_test_078", "cycle": 21, "technician": "TECH_11", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-01-28", "asset_id": "FD001_test_078", "cycle": 23, "technician": "TECH_10", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-03-09", "asset_id": "FD001_test_078", "cycle": 63, "technician": "TECH_03", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-01-24", "asset_id": "FD001_test_079", "cycle": 19, "technician": "TECH_05", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-03-27", "asset_id": "FD001_test_079", "cycle": 81, "technician": "TECH_04", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-04-03", "asset_id": "FD001_test_079", "cycle": 88, "technician": "TECH_01", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-04-08", "asset_id": "FD001_test_079", "cycle": 93, "technician": "TECH_05", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-01-27", "asset_id": "FD001_test_080", "cycle": 22, "technician": "TECH_01", "note": "Oil sample taken; results within limits."}
+{"date": "2026-02-05", "asset_id": "FD001_test_080", "cycle": 31, "technician": "TECH_02", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-21", "asset_id": "FD001_test_080", "cycle": 75, "technician": "TECH_11", "note": "Oil sample taken; results within limits."}
+{"date": "2026-04-02", "asset_id": "FD001_test_080", "cycle": 87, "technician": "TECH_10", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-21", "asset_id": "FD001_test_081", "cycle": 75, "technician": "TECH_05", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-05-02", "asset_id": "FD001_test_081", "cycle": 117, "technician": "TECH_03", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-05-20", "asset_id": "FD001_test_081", "cycle": 135, "technician": "TECH_02", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-06-16", "asset_id": "FD001_test_081", "cycle": 162, "technician": "TECH_04", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-04-28", "asset_id": "FD001_test_084", "cycle": 113, "technician": "TECH_05", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-30", "asset_id": "FD001_test_084", "cycle": 115, "technician": "TECH_08", "note": "Oil sample taken; results within limits."}
+{"date": "2026-05-12", "asset_id": "FD001_test_084", "cycle": 127, "technician": "TECH_03", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-06-01", "asset_id": "FD001_test_084", "cycle": 147, "technician": "TECH_07", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-02-09", "asset_id": "FD001_test_086", "cycle": 35, "technician": "TECH_07", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-11", "asset_id": "FD001_test_086", "cycle": 37, "technician": "TECH_10", "note": "Oil sample taken; results within limits."}
+{"date": "2026-03-11", "asset_id": "FD001_test_086", "cycle": 65, "technician": "TECH_04", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-21", "asset_id": "FD001_test_086", "cycle": 106, "technician": "TECH_03", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-01-20", "asset_id": "FD001_test_090", "cycle": 15, "technician": "TECH_10", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-21", "asset_id": "FD001_test_090", "cycle": 106, "technician": "TECH_09", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-04-30", "asset_id": "FD001_test_090", "cycle": 115, "technician": "TECH_11", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-05-30", "asset_id": "FD001_test_090", "cycle": 145, "technician": "TECH_11", "note": "ThermalGuard warning status acknowledged; HPC blade kit ordered."}
+{"date": "2026-01-26", "asset_id": "FD001_test_093", "cycle": 21, "technician": "TECH_03", "note": "Oil sample taken; results within limits."}
+{"date": "2026-01-30", "asset_id": "FD001_test_093", "cycle": 25, "technician": "TECH_06", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-19", "asset_id": "FD001_test_093", "cycle": 73, "technician": "TECH_10", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-05-09", "asset_id": "FD001_test_093", "cycle": 124, "technician": "TECH_02", "note": "Oil sample taken; results within limits."}
+{"date": "2026-04-14", "asset_id": "FD001_test_094", "cycle": 99, "technician": "TECH_04", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-04-26", "asset_id": "FD001_test_094", "cycle": 111, "technician": "TECH_07", "note": "Compressor water wash performed; T30 margin partially recovered."}
+{"date": "2026-05-03", "asset_id": "FD001_test_094", "cycle": 118, "technician": "TECH_07", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-05-10", "asset_id": "FD001_test_094", "cycle": 125, "technician": "TECH_08", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-02-07", "asset_id": "FD001_test_095", "cycle": 33, "technician": "TECH_02", "note": "Oil sample taken; results within limits."}
+{"date": "2026-03-07", "asset_id": "FD001_test_095", "cycle": 61, "technician": "TECH_09", "note": "Oil sample taken; results within limits."}
+{"date": "2026-03-24", "asset_id": "FD001_test_095", "cycle": 78, "technician": "TECH_11", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-03-28", "asset_id": "FD001_test_095", "cycle": 82, "technician": "TECH_12", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-04", "asset_id": "FD001_test_096", "cycle": 30, "technician": "TECH_12", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-08", "asset_id": "FD001_test_096", "cycle": 34, "technician": "TECH_09", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-02-15", "asset_id": "FD001_test_096", "cycle": 41, "technician": "TECH_11", "note": "Oil sample taken; results within limits."}
+{"date": "2026-04-03", "asset_id": "FD001_test_096", "cycle": 88, "technician": "TECH_08", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-01", "asset_id": "FD001_test_097", "cycle": 55, "technician": "TECH_05", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-03-16", "asset_id": "FD001_test_097", "cycle": 70, "technician": "TECH_01", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-04-14", "asset_id": "FD001_test_097", "cycle": 99, "technician": "TECH_11", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-05-11", "asset_id": "FD001_test_097", "cycle": 126, "technician": "TECH_08", "note": "Slight upward trend in HPC outlet temperature (T30) noted on trend review; continue monitoring."}
+{"date": "2026-01-17", "asset_id": "FD001_test_098", "cycle": 12, "technician": "TECH_06", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-02-17", "asset_id": "FD001_test_098", "cycle": 43, "technician": "TECH_02", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-04-16", "asset_id": "FD001_test_098", "cycle": 101, "technician": "TECH_08", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-05-04", "asset_id": "FD001_test_098", "cycle": 119, "technician": "TECH_09", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-01-17", "asset_id": "FD001_test_099", "cycle": 12, "technician": "TECH_10", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-01-29", "asset_id": "FD001_test_099", "cycle": 24, "technician": "TECH_12", "note": "Routine visual inspection completed. No findings."}
+{"date": "2026-03-06", "asset_id": "FD001_test_099", "cycle": 60, "technician": "TECH_05", "note": "Oil sample taken; results within limits."}
+{"date": "2026-03-29", "asset_id": "FD001_test_099", "cycle": 83, "technician": "TECH_07", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-01", "asset_id": "FD001_test_100", "cycle": 55, "technician": "TECH_08", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-03-04", "asset_id": "FD001_test_100", "cycle": 58, "technician": "TECH_04", "note": "Fan blades inspected; no FOD damage observed."}
+{"date": "2026-06-07", "asset_id": "FD001_test_100", "cycle": 153, "technician": "TECH_03", "note": "Ps30 trending above fleet median; scheduled compressor wash."}
+{"date": "2026-07-08", "asset_id": "FD001_test_100", "cycle": 184, "technician": "TECH_11", "note": "Engine flagged critical by ThermalGuard; removal planned at next maintenance window."}

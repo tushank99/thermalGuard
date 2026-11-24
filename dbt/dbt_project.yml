@@ -1,0 +1,25 @@
+name: thermalguard
+version: "0.1.0"
+config-version: 2
+profile: thermalguard
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+target-path: target
+clean-targets: [target, dbt_packages]
+
+vars:
+  rul_cap: 125
+  rolling_window: 10
+  # Sensors with degradation signal; constant sensors are kept in staging but not featurised.
+  informative_sensors: [2, 3, 4, 7, 8, 9, 11, 12, 13, 14, 15, 17, 20, 21]
+
+models:
+  thermalguard:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts

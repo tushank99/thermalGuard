@@ -1,0 +1,32 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/raw/
+data/*.duckdb
+data/*.duckdb.wal
+mlruns/
+mlflow.db
+# keep the small serving model in git so CI/CD can deploy it (v1; later pulled from the registry)
+artifacts/*
+!artifacts/lstm/
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+logs/
+.terraform/
+*.tfstate
+*.tfstate.backup
+build/
+data/lakehouse/
+*.egg-info/
+dbt/.user.yml
+.pytest_cache/
+.ipynb_checkpoints/
+.streamlit/secrets.toml
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# partial run (free-tier rate limits); regenerate with: python -m thermalguard.rag.evaluate
+reports/ragas.json

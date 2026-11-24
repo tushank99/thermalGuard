@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_cycles
+    description: Typed, unioned sensor readings. Grain = asset x cycle.
+    columns:
+      - name: cycle_key
+        data_tests: [unique, not_null]
+      - name: asset_id
+        data_tests: [not_null]
+      - name: split
+        data_tests: [{accepted_values: {arguments: {values: [train, test]}}}]
+      - name: subset
+        data_tests: [{accepted_values: {arguments: {values: [FD001, FD002, FD003, FD004]}}}]
+      - name: cycle
+        data_tests: [not_null, {in_range: {arguments: {min_value: 1, max_value: 1000}}}]
+      - name: op_setting_3
+        data_tests: [not_null, {in_range: {arguments: {min_value: 60, max_value: 100}}}]
+
+  - name: stg_rul_truth
+    columns:
+      - name: asset_id
+        data_tests: [unique, not_null]

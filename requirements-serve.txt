@@ -1,0 +1,7 @@
+# Minimal runtime for the Lambda zip (no torch / sklearn / xgboost)
+fastapi>=0.115
+mangum>=0.19
+pydantic>=2.8
+numpy>=1.26,<3
+onnxruntime>=1.19
+uvicorn>=0.30
