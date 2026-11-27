@@ -4,12 +4,12 @@ import json
 import plotly.graph_objects as go
 import streamlit as st
 
-from _shared import ART, MUTED, SERIES, STATUS_COLOR, need, report, style, trajectory
+from _shared import ART, MUTED, SERIES, STATUS_COLOR, SURFACE, kpi_row, need, page_header, report, style, trajectory
 
-st.set_page_config(page_title="Anomaly Monitor · ThermalGuard", page_icon="📈", layout="wide")
-st.title("📈 Anomaly monitor")
-st.caption("Models trained only on healthy early-life cycles. An alert fires when the score stays above the "
-           "threshold (99.5th percentile of healthy scores) for 3 consecutive cycles.")
+st.set_page_config(page_title="Anomaly Monitor · ThermalGuard", page_icon=":material/monitor_heart:", layout="wide")
+page_header("Unsupervised detection", "Anomaly monitor",
+            "Isolation Forest and an autoencoder, trained only on healthy early-life cycles. An alert fires when "
+            "the score stays above the threshold (99.5th percentile of healthy scores) for 3 consecutive cycles.")
 
 if not (need(ART / "fleet/trajectory.parquet", "python -m thermalguard.fleet")
         and need(ART / "anomaly/thresholds.json", "python -m thermalguard.anomaly")):
@@ -17,14 +17,16 @@ if not (need(ART / "fleet/trajectory.parquet", "python -m thermalguard.fleet")
 
 rep = report("anomaly.json")
 if rep:
-    st.subheader("How early do alerts come? (held-out run-to-failure engines)")
-    cols = st.columns(len(rep["results"]))
-    for c, (name, m) in zip(cols, rep["results"].items()):
-        c.metric(f"{'Isolation Forest' if name == 'iforest' else 'Autoencoder'} · median lead time",
-                 f"{m['median_lead_time_cycles']:.0f} cycles before failure")
-        c.caption(f"Detected {m['detection_rate']:.0%} of engines · lead time P10–P90 "
-                  f"{m['p10_lead_time_cycles']:.0f}–{m['p90_lead_time_cycles']:.0f} cycles · "
-                  f"early-alarm rate {m['early_alarm_rate']:.0%}")
+    st.subheader("How early do alerts come?")
+    items = []
+    for name, m in rep["results"].items():
+        label = "Isolation Forest" if name == "iforest" else "Autoencoder"
+        items += [(f"{label} · median lead time", f"{m['median_lead_time_cycles']:.0f} cycles",
+                   f"before failure · P10–P90 {m['p10_lead_time_cycles']:.0f}–{m['p90_lead_time_cycles']:.0f}", None),
+                  (f"{label} · engines detected", f"{m['detection_rate']:.0%}",
+                   f"early-alarm rate {m['early_alarm_rate']:.0%}", None)]
+    kpi_row(items)
+    st.caption("Measured on held-out run-to-failure engines.")
 
 thr = json.loads((ART / "anomaly/thresholds.json").read_text())
 t = trajectory()
@@ -47,7 +49,7 @@ for k, (col, name) in enumerate([("iforest_score", "Isolation Forest"), ("autoen
     if len(first):
         r = first.iloc[0]
         fig.add_scatter(x=[r.cycle], y=[r[col]], mode="markers", name="First alert",
-                        marker=dict(size=11, color=STATUS_COLOR["critical"], line=dict(color="white", width=2)),
+                        marker=dict(size=11, color=STATUS_COLOR["critical"], line=dict(color=SURFACE, width=2)),
                         hovertemplate=f"First alert at cycle {int(r.cycle)}<br>Actual RUL then: {int(r.rul_true)}"
                                       "<extra></extra>")
         msg = f"first alert at cycle **{int(r.cycle)}** (actual RUL then: {int(r.rul_true)} cycles)"
@@ -55,6 +57,6 @@ for k, (col, name) in enumerate([("iforest_score", "Isolation Forest"), ("autoen
         msg = "no alert raised"
     fig.update_layout(title=dict(text=name, font=dict(size=14)), xaxis_title="Operating cycle",
                       yaxis_title="Score (higher = more anomalous)")
-    with grid[k]:
+    with grid[k].container(border=True):
         st.plotly_chart(style(fig, 340, legend=False), width="stretch")
-        st.markdown(f"{name}: {msg}")
+        st.caption(f"{name}: {msg}")

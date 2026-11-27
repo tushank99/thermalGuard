@@ -2,11 +2,13 @@
 import plotly.graph_objects as go
 import streamlit as st
 
-from _shared import INFORMATIVE, SENSORS_PATH, SERIES, add_rolling, need, sensor_label, sensors, style
+from _shared import (INFORMATIVE, SENSORS_PATH, SERIES, add_rolling, need, page_header, sensor_label, sensors,
+                     style)
 
-st.set_page_config(page_title="Engine Explorer · ThermalGuard", page_icon="🔎", layout="wide")
-st.title("🔎 Engine explorer")
-st.caption("Self-serve view of the lakehouse gold table (PySpark + Delta). Pick engines and sensors; no SQL needed.")
+st.set_page_config(page_title="Engine Explorer · ThermalGuard", page_icon=":material/query_stats:", layout="wide")
+page_header("Self-serve analytics", "Engine explorer",
+            "Browse the lakehouse gold table (PySpark + Delta) by engine and sensor. Pick up to four of each; "
+            "no SQL needed.")
 
 if not need(SENSORS_PATH, "python scripts/export_dashboard_data.py"):
     st.stop()
@@ -55,13 +57,14 @@ for k, s in enumerate(sensors):
     fig.update_layout(title=dict(text=f"{sensor_label(s)} · {view.lower()}"
                                  + ("" if view == "Raw value" else f" (w={window})"), font=dict(size=14)),
                       xaxis_title="Operating cycle")
-    grid[k % 2].plotly_chart(style(fig, 320, legend=len(engines) > 1), width="stretch")
+    with grid[k % 2].container(border=True):
+        st.plotly_chart(style(fig, 320, legend=len(engines) > 1), width="stretch")
 
 cols = ["asset_id", "cycle", "rul", *[col(s) for s in sensors]]
 st.subheader("Data")
 st.dataframe(sel[cols], hide_index=True, width="stretch", height=260)
 c1, c2 = st.columns([1, 3])
-c1.download_button("⬇ Download CSV", sel[cols].to_csv(index=False), file_name=f"thermalguard_{subset}_{split}.csv",
-                   mime="text/csv")
+c1.download_button("Download CSV", sel[cols].to_csv(index=False), file_name=f"thermalguard_{subset}_{split}.csv",
+                   mime="text/csv", icon=":material/download:")
 with c2.expander("Summary statistics"):
     st.dataframe(sel.groupby("asset_id")[[col(s) for s in sensors]].describe().T, width="stretch")

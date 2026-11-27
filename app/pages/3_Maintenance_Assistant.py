@@ -3,12 +3,12 @@ import uuid
 
 import streamlit as st
 
-from _shared import ART, need
+from _shared import ART, need, page_header
 
-st.set_page_config(page_title="Assistant · ThermalGuard", page_icon="💬", layout="wide")
-st.title("💬 Maintenance assistant")
-st.caption("Answers from the maintenance manual, NASA documentation and maintenance logs, with citations. "
-           "Mention an engine (e.g. *engine 31* or *FD001_test_031*) to pull its live RUL and anomaly status.")
+st.set_page_config(page_title="Assistant · ThermalGuard", page_icon=":material/forum:", layout="wide")
+page_header("LangGraph RAG", "Maintenance assistant",
+            "Answers from the maintenance manual, NASA documentation and maintenance logs, with cited sources. "
+            "Mention an engine (for example <i>engine 31</i>) to pull its live RUL and anomaly status.")
 
 from thermalguard.rag.llm import KEY_VARS, llm_available, provider  # noqa: E402
 
@@ -25,14 +25,16 @@ if "thread_id" not in st.session_state:
     st.session_state.thread_id, st.session_state.chat = str(uuid.uuid4()), []
 
 with st.sidebar:
-    if st.button("🧹 New conversation"):
+    if st.button("New conversation", icon=":material/refresh:", width="stretch"):
         st.session_state.thread_id, st.session_state.chat = str(uuid.uuid4()), []
-    st.markdown("**Try:**\n- What does a warning status mean?\n- How is engine 31 doing?\n- What should I inspect "
-                "next? *(follow-up)*\n- How do I tell a sensor fault from degradation?")
+    st.markdown("**Try asking**\n- What does a warning status mean?\n- How is engine 31 doing?\n- What should I "
+                "inspect next? *(follow-up)*\n- How do I tell a sensor fault from degradation?")
+
+AVATAR = {"user": ":material/person:", "assistant": ":material/engineering:"}
 
 
 def render(turn: dict) -> None:
-    with st.chat_message(turn["role"]):
+    with st.chat_message(turn["role"], avatar=AVATAR[turn["role"]]):
         st.markdown(turn["content"])
         if turn.get("facts"):
             st.caption(f"Live engine facts: {turn['facts']}")
@@ -61,6 +63,6 @@ if q := st.chat_input("Ask about an engine, a procedure or a sensor…"):
             turn = {"role": "assistant", "content": msg.content,
                     "citations": msg.additional_kwargs.get("citations"), "facts": msg.additional_kwargs.get("asset_facts")}
         except Exception as e:  # free-tier rate limits etc.
-            turn = {"role": "assistant", "content": f"⚠️ The assistant failed: `{type(e).__name__}: {e}`"}
+            turn = {"role": "assistant", "content": f"The assistant could not answer right now: `{type(e).__name__}: {e}`"}
     st.session_state.chat.append(turn)
     render(turn)
