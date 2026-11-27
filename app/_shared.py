@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -12,6 +13,14 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 ART = ROOT / "artifacts"
+
+# Streamlit Community Cloud: secrets (e.g. GROQ_API_KEY) -> env vars, so the package reads them like .env locally.
+try:
+    for k, v in st.secrets.items():
+        if isinstance(v, str):
+            os.environ.setdefault(k, v)
+except Exception:  # no secrets file locally
+    pass
 
 # Reference palette (dataviz skill): categorical in fixed order, status colours reserved.
 SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
@@ -64,11 +73,23 @@ def trajectory() -> pd.DataFrame:
     return pd.read_parquet(ART / "fleet/trajectory.parquet")
 
 
-@st.cache_data(show_spinner="Loading gold table…")
-def gold(subsets: tuple[str, ...]) -> pd.DataFrame:
-    from thermalguard.data import load_gold
+SENSORS_PATH = ART / "dashboard/sensors.parquet"
 
-    return load_gold(list(subsets))
+
+@st.cache_data(show_spinner="Loading sensor data…")
+def sensors(subset: str) -> pd.DataFrame:
+    """Slim export of gold (scripts/export_dashboard_data.py): raw informative sensors per cycle."""
+    return pd.read_parquet(SENSORS_PATH, filters=[("subset", "==", subset)])
+
+
+def add_rolling(df: pd.DataFrame, cols: list[str], window: int) -> pd.DataFrame:
+    """Rolling mean/std per engine; same definition as the gold table (trailing window, std of 1 row = 0)."""
+    g = df.groupby("asset_id")
+    out = df.copy()
+    for c in cols:
+        out[f"{c}_mean_{window}"] = g[c].transform(lambda s: s.rolling(window, min_periods=1).mean())
+        out[f"{c}_std_{window}"] = g[c].transform(lambda s: s.rolling(window, min_periods=1).std()).fillna(0.0)
+    return out
 
 
 @st.cache_data(show_spinner=False)

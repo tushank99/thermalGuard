@@ -17,13 +17,15 @@ def llm_available() -> bool:
     return bool(os.getenv(KEY_VARS.get(provider(), ""), ""))
 
 
-def get_llm(temperature: float = 0.0, max_tokens: int | None = None, model: str | None = None):
+def get_llm(temperature: float = 0.0, max_tokens: int | None = None, model: str | None = None,
+            reasoning_effort: str | None = None):
     p = provider()
     model = model or os.getenv("LLM_MODEL", DEFAULT_MODELS[p])
     if p == "groq":
         from langchain_groq import ChatGroq
 
-        return ChatGroq(model=model, temperature=temperature, max_retries=3, max_tokens=max_tokens)
+        extra = {"reasoning_effort": reasoning_effort} if reasoning_effort else {}
+        return ChatGroq(model=model, temperature=temperature, max_retries=3, max_tokens=max_tokens, **extra)
     if p == "gemini":
         from langchain_google_genai import ChatGoogleGenerativeAI
 

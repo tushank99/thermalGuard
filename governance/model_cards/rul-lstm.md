@@ -31,7 +31,7 @@ RMSE reduction vs Ridge baseline: **13.4%**
   operating regimes (FD002/FD004) or other fault modes is not validated.
 - RUL above 125 cycles is not distinguishable by design (the cap).
 - Assumes all 14 sensors are present and calibrated as in training. Sensor drift degrades accuracy, which is
-  monitored with Evidently (Phase 6).
+  monitored with Evidently (`python -m thermalguard.drift`).
 - Point estimate only, with no calibrated uncertainty interval yet.
 
 ## Ethical & governance notes

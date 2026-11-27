@@ -2,19 +2,18 @@
 import plotly.graph_objects as go
 import streamlit as st
 
-from _shared import ART, INFORMATIVE, ROOT, SERIES, gold, need, sensor_label, style
+from _shared import INFORMATIVE, SENSORS_PATH, SERIES, add_rolling, need, sensor_label, sensors, style
 
 st.set_page_config(page_title="Engine Explorer · ThermalGuard", page_icon="🔎", layout="wide")
 st.title("🔎 Engine explorer")
-st.caption("Self-serve view of `gold/rul_features` (Delta Lake). Pick engines and sensors; no SQL needed.")
+st.caption("Self-serve view of the lakehouse gold table (PySpark + Delta). Pick engines and sensors; no SQL needed.")
 
-if not need(ROOT / "data/lakehouse/gold/rul_features",
-            'docker run --rm -v "${PWD}:/app" thermalguard-spark python -m thermalguard.lakehouse.pipeline'):
+if not need(SENSORS_PATH, "python scripts/export_dashboard_data.py"):
     st.stop()
 
 f = st.columns([1, 1, 3, 1.4, 1])
 subset = f[0].selectbox("Dataset", ["FD001", "FD002", "FD003", "FD004"])
-df = gold((subset,))
+df = sensors(subset)
 split = f[1].selectbox("Split", ["test", "train"], help="train = run to failure; test = in service")
 df = df[df.split == split]
 engines_all = sorted(df.asset_id.unique())
@@ -31,6 +30,8 @@ if not engines or not sensors:
 sel = df[df.asset_id.isin(engines)]
 lo, hi = int(sel.cycle.min()), int(sel.cycle.max())
 cyc = st.slider("Cycle range", lo, hi, (lo, hi))
+if view != "Raw value":  # rolling first, then trim to the cycle range (windows see earlier cycles)
+    sel = add_rolling(sel, [f"sensor_{s}" for s in sensors], window)
 sel = sel[sel.cycle.between(*cyc)]
 
 

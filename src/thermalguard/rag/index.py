@@ -1,6 +1,6 @@
 """Build and query the local vector index over manuals + maintenance logs.
 
-Embeddings: sentence-transformers/all-MiniLM-L6-v2 (local, free). Index: normalised numpy matrix (exact cosine
+Embeddings: all-MiniLM-L6-v2 via fastembed (ONNX, no torch: light enough for free hosting). Index: normalised numpy matrix (exact cosine
 search; fine for a few thousand chunks, and swappable for FAISS/pgvector at scale).
 Usage:  python -m thermalguard.rag.index      (rebuild)
 """
@@ -21,8 +21,27 @@ OUT = config.ARTIFACTS_DIR / "rag"
 EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
 
+def _pieces(text: str, size: int) -> list[str]:
+    """Paragraphs; an oversized paragraph (e.g. a table) is packed line by line so rows stay whole."""
+    out = []
+    for p in (p.strip() for p in re.split(r"\n\s*\n", text)):
+        if not p:
+            continue
+        if len(p) <= size or "\n" not in p:
+            out.append(p)
+            continue
+        cur = ""
+        for line in p.splitlines():
+            if cur and len(cur) + len(line) + 1 > size:
+                out.append(cur)
+                cur = ""
+            cur = f"{cur}\n{line}" if cur else line
+        out.append(cur)
+    return out
+
+
 def chunk(text: str, size: int = 900, overlap: int = 150) -> list[str]:
-    paras, chunks, cur = [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()], [], ""
+    paras, chunks, cur = _pieces(text, size), [], ""
     for p in paras:
         if len(cur) + len(p) + 2 <= size:
             cur = f"{cur}\n\n{p}" if cur else p
@@ -43,8 +62,9 @@ def load_documents() -> list[dict]:
     manual = (KB / "turbofan_maintenance_manual.md").read_text(encoding="utf-8")
     for section in re.split(r"\n(?=## )", manual):
         title = section.splitlines()[0].lstrip("# ").strip()
-        for c in chunk(section):
-            docs.append({"text": c, "source": f"Maintenance manual: {title}", "asset_id": None})
+        body = "\n".join(section.splitlines()[1:])
+        for c in chunk(body):  # every chunk carries its section title, so no chunk is a bare heading
+            docs.append({"text": f"{title}\n{c}", "source": f"Maintenance manual: {title}", "asset_id": None})
 
     if NASA_PDF.exists():
         from pypdf import PdfReader
@@ -65,14 +85,19 @@ def load_documents() -> list[dict]:
 
 @lru_cache(maxsize=1)
 def embedder():
-    from sentence_transformers import SentenceTransformer
+    from fastembed import TextEmbedding
 
-    return SentenceTransformer(EMBED_MODEL, device="cpu")
+    return TextEmbedding(EMBED_MODEL)
+
+
+def embed(texts: list[str]) -> np.ndarray:
+    v = np.array(list(embedder().embed(texts, batch_size=64)), dtype=np.float32)
+    return v / np.linalg.norm(v, axis=1, keepdims=True)
 
 
 def build() -> None:
     docs = load_documents()
-    vecs = embedder().encode([d["text"] for d in docs], normalize_embeddings=True, batch_size=64)
+    vecs = embed([d["text"] for d in docs])
     OUT.mkdir(parents=True, exist_ok=True)
     np.save(OUT / "vectors.npy", vecs.astype(np.float32))
     (OUT / "chunks.json").write_text(json.dumps(docs, indent=1))
@@ -88,7 +113,7 @@ class Retriever:
         self.docs = json.loads((OUT / "chunks.json").read_text())
 
     def search(self, query: str, k: int = 5, asset_id: str | None = None) -> list[dict]:
-        q = embedder().encode([query], normalize_embeddings=True)[0]
+        q = embed([query])[0]
         scores = self.vecs @ q
         order = list(np.argsort(-scores)[:k])
         if asset_id:  # always include that engine's own maintenance log

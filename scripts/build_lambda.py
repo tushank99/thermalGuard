@@ -19,7 +19,10 @@ def main() -> None:
     PKG.mkdir(parents=True)
     subprocess.check_call([
         sys.executable, "-m", "pip", "install", "-q", "-r", str(ROOT / "requirements-serve.txt"),
-        "--target", str(PKG), "--platform", "manylinux2014_x86_64", "--python-version", "3.12",
+        "--target", str(PKG), "--python-version", "3.12",
+        # Lambda python3.12 (AL2023, glibc 2.34) accepts all of these tags
+        "--platform", "manylinux_2_28_x86_64", "--platform", "manylinux_2_27_x86_64",
+        "--platform", "manylinux2014_x86_64",
         "--implementation", "cp", "--only-binary=:all:", "--upgrade",
     ])
     # Only the serving module ships; training code stays out of the runtime.

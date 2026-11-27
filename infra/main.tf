@@ -1,9 +1,9 @@
 terraform {
   required_version = ">= 1.6"
   required_providers {
-    aws = { source = "hashicorp/aws", version = "~> 5.70" }
+    aws = { source = "hashicorp/aws", version = "~> 6.0" }
   }
-  # v1: local state. Scale-up: move to an S3 backend (see PLAN.md).
+  # Local state; for a team setup use an S3 backend.
 }
 
 provider "aws" {
@@ -82,6 +82,16 @@ resource "aws_lambda_function_url" "api" {
     allow_methods = ["GET", "POST"]
     allow_headers = ["content-type"]
   }
+}
+
+# Public Function URLs also need lambda:InvokeFunction, restricted to calls that come through the URL
+# (direct Invoke API calls stay denied).
+resource "aws_lambda_permission" "url_invoke" {
+  statement_id             = "FunctionURLInvokeAllowPublicAccess"
+  action                   = "lambda:InvokeFunction"
+  function_name            = aws_lambda_function.api.function_name
+  principal                = "*"
+  invoked_via_function_url = true
 }
 
 # ---- Cost guard-rail: email alert if monthly spend forecast exceeds $1 ----

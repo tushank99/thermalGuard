@@ -1,0 +1,168 @@
+{
+  "reference": "FD001 run-to-failure, 50 engines",
+  "method": "Evidently DataDriftPreset, normed Wasserstein per sensor (threshold 0.3, calibrated on a same-fleet holdout); dataset drift if >= 50% of sensors drift",
+  "batches": {
+    "FD001_new": {
+      "rows_reference": 10239,
+      "rows_current": 10392,
+      "columns": 14,
+      "drifted": [],
+      "drifted_columns": 0,
+      "drifted_share": 0.0,
+      "tests": {
+        "sensor_2": {
+          "method": "wasserstein",
+          "score": 0.1355,
+          "threshold": 0.3
+        },
+        "sensor_3": {
+          "method": "wasserstein",
+          "score": 0.1249,
+          "threshold": 0.3
+        },
+        "sensor_4": {
+          "method": "wasserstein",
+          "score": 0.1469,
+          "threshold": 0.3
+        },
+        "sensor_7": {
+          "method": "wasserstein",
+          "score": 0.1532,
+          "threshold": 0.3
+        },
+        "sensor_8": {
+          "method": "wasserstein",
+          "score": 0.1448,
+          "threshold": 0.3
+        },
+        "sensor_9": {
+          "method": "wasserstein",
+          "score": 0.0651,
+          "threshold": 0.3
+        },
+        "sensor_11": {
+          "method": "wasserstein",
+          "score": 0.1586,
+          "threshold": 0.3
+        },
+        "sensor_12": {
+          "method": "wasserstein",
+          "score": 0.1607,
+          "threshold": 0.3
+        },
+        "sensor_13": {
+          "method": "wasserstein",
+          "score": 0.1447,
+          "threshold": 0.3
+        },
+        "sensor_14": {
+          "method": "wasserstein",
+          "score": 0.0459,
+          "threshold": 0.3
+        },
+        "sensor_15": {
+          "method": "wasserstein",
+          "score": 0.1392,
+          "threshold": 0.3
+        },
+        "sensor_17": {
+          "method": "wasserstein",
+          "score": 0.1373,
+          "threshold": 0.3
+        },
+        "sensor_20": {
+          "method": "wasserstein",
+          "score": 0.1461,
+          "threshold": 0.3
+        },
+        "sensor_21": {
+          "method": "wasserstein",
+          "score": 0.1431,
+          "threshold": 0.3
+        }
+      },
+      "drift_detected": false
+    },
+    "FD002": {
+      "rows_reference": 10239,
+      "rows_current": 53759,
+      "columns": 14,
+      "drifted": [],
+      "drifted_columns": 14,
+      "drifted_share": 1.0,
+      "tests": {
+        "sensor_2": {
+          "method": "wasserstein",
+          "score": 125.9306,
+          "threshold": 0.3
+        },
+        "sensor_3": {
+          "method": "wasserstein",
+          "score": 27.7325,
+          "threshold": 0.3
+        },
+        "sensor_4": {
+          "method": "wasserstein",
+          "score": 22.4464,
+          "threshold": 0.3
+        },
+        "sensor_7": {
+          "method": "wasserstein",
+          "score": 305.5729,
+          "threshold": 0.3
+        },
+        "sensor_8": {
+          "method": "wasserstein",
+          "score": 2198.8981,
+          "threshold": 0.3
+        },
+        "sensor_9": {
+          "method": "wasserstein",
+          "score": 24.3576,
+          "threshold": 0.3
+        },
+        "sensor_11": {
+          "method": "wasserstein",
+          "score": 16.8513,
+          "threshold": 0.3
+        },
+        "sensor_12": {
+          "method": "wasserstein",
+          "score": 343.281,
+          "threshold": 0.3
+        },
+        "sensor_13": {
+          "method": "wasserstein",
+          "score": 727.8718,
+          "threshold": 0.3
+        },
+        "sensor_14": {
+          "method": "wasserstein",
+          "score": 3.9947,
+          "threshold": 0.3
+        },
+        "sensor_15": {
+          "method": "wasserstein",
+          "score": 23.5372,
+          "threshold": 0.3
+        },
+        "sensor_17": {
+          "method": "wasserstein",
+          "score": 28.8424,
+          "threshold": 0.3
+        },
+        "sensor_20": {
+          "method": "wasserstein",
+          "score": 99.456,
+          "threshold": 0.3
+        },
+        "sensor_21": {
+          "method": "wasserstein",
+          "score": 100.0094,
+          "threshold": 0.3
+        }
+      },
+      "drift_detected": true
+    }
+  }
+}

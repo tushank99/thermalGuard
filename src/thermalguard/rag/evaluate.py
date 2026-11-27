@@ -1,6 +1,6 @@
 """Score the assistant with RAGAS (faithfulness, answer relevancy, context precision) on a golden set.
 
-Judge LLM = the same free-tier LLM; embeddings = local MiniLM. Writes reports/ragas.json.
+Judge LLM = a different free-tier model than the answerer (no self-grading); embeddings = local MiniLM. Writes reports/ragas.json.
 Usage:  python -m thermalguard.rag.evaluate
 """
 from __future__ import annotations
@@ -44,14 +44,22 @@ GOLDEN = [
 
 
 def main() -> None:
-    from langchain_huggingface import HuggingFaceEmbeddings
+    from langchain_core.embeddings import Embeddings
     from ragas import EvaluationDataset, evaluate
     from ragas.embeddings import LangchainEmbeddingsWrapper
     from ragas.llms import LangchainLLMWrapper
     from ragas.metrics import Faithfulness, LLMContextPrecisionWithReference, ResponseRelevancy
     from ragas.run_config import RunConfig
 
+    from thermalguard.rag.index import embed
     from thermalguard.rag.llm import get_llm
+
+    class FastEmbed(Embeddings):  # same local MiniLM embeddings the retriever uses
+        def embed_documents(self, texts):
+            return embed(list(texts)).tolist()
+
+        def embed_query(self, text):
+            return embed([text])[0].tolist()
 
     rows = []
     for q, ref in GOLDEN:
@@ -62,9 +70,9 @@ def main() -> None:
 
     # reasoning model: give the judge room to finish; Groq allows only n=1 -> strictness=1
     # Separate judge model: avoids self-grading bias and uses its own free-tier daily token quota.
-    judge_model = os.getenv("RAGAS_JUDGE_MODEL", "qwen/qwen3.8-27b")
-    judge = LangchainLLMWrapper(get_llm(max_tokens=8192, model=judge_model))
-    emb = LangchainEmbeddingsWrapper(HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2"))
+    judge_model = os.getenv("RAGAS_JUDGE_MODEL", "openai/gpt-oss-20b")
+    judge = LangchainLLMWrapper(get_llm(max_tokens=8192, model=judge_model, reasoning_effort="low"))
+    emb = LangchainEmbeddingsWrapper(FastEmbed())
     result = evaluate(EvaluationDataset.from_list(rows),
                       metrics=[Faithfulness(), ResponseRelevancy(strictness=1), LLMContextPrecisionWithReference()],
                       llm=judge, embeddings=emb,

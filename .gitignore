@@ -7,9 +7,16 @@ data/*.duckdb
 data/*.duckdb.wal
 mlruns/
 mlflow.db
-# keep the small serving model in git so CI/CD can deploy it (v1; later pulled from the registry)
+# keep the small serving model in git so CI/CD can deploy it
 artifacts/*
 !artifacts/lstm/
+# small precomputed outputs the hosted dashboard reads (~7 MB total)
+!artifacts/fleet/
+!artifacts/rag/
+!artifacts/dashboard/
+!artifacts/anomaly/
+artifacts/anomaly/*
+!artifacts/anomaly/thresholds.json
 dbt/target/
 dbt/logs/
 dbt/dbt_packages/
@@ -19,6 +26,8 @@ logs/
 *.tfstate.backup
 build/
 data/lakehouse/
+# personal notes, not published
+private/
 *.egg-info/
 dbt/.user.yml
 .pytest_cache/
@@ -28,5 +37,5 @@ dbt/.user.yml
 .idea/
 .DS_Store
 Thumbs.db
-# partial run (free-tier rate limits); regenerate with: python -m thermalguard.rag.evaluate
-reports/ragas.json
+# Evidently HTML reports are large; regenerate with: python -m thermalguard.drift
+reports/drift_*.html

@@ -1,0 +1,136 @@
+{
+  "n_questions": 15,
+  "judge_model": "openai/gpt-oss-20b",
+  "scores": {
+    "faithfulness": 0.887,
+    "answer_relevancy": 0.692,
+    "llm_context_precision_with_reference": 0.628,
+    "scored_rows": {
+      "faithfulness": 15,
+      "answer_relevancy": 15,
+      "llm_context_precision_with_reference": 15
+    }
+  },
+  "per_question": [
+    {
+      "user_input": "What does sensor_11 measure?",
+      "response": "Sensor\u202f11 (Ps30) measures the static pressure at the high\u2011pressure compressor (HPC) outlet, expressed in psia\u30104\u3011.",
+      "reference": "sensor_11 is Ps30, the static pressure at the HPC outlet, in psia.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8430090285338898,
+      "llm_context_precision_with_reference": 0.249999999975
+    },
+    {
+      "user_input": "Which sensors carry no degradation information under a single operating condition?",
+      "response": "Sensors that show an isolated jump while their physically related channels remain steady provide no degradation information under a single operating condition; the change is attributed to a sensor fault rather than engine wear (e.g., a sudden change in T30 when Ps30 and T50 stay steady)\u30105\u3011.",
+      "reference": "Sensors 1, 5, 6, 10, 16, 18 and 19 are effectively constant and carry no degradation information.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.09494350427004528,
+      "llm_context_precision_with_reference": 0.0
+    },
+    {
+      "user_input": "What are the signs of HPC degradation?",
+      "response": "- Rising temperatures at the HPC outlet (T30, sensor\u202f3) and at the LPT outlet (T50, sensor\u202f4)\u30102\u3011.  \n- Increasing static\u2011pressure\u2011ratio indicator Ps30 (sensor\u202f11)\u30102\u3011.  \n- Decreasing fuel\u2011flow ratio \u03c6 (sensor\u202f12) and reduced coolant bleed flows W31/W32 (sensors\u202f20,\u202f21)\u30102\u3011.  \n- Upward drift of corrected core speed NRc (sensor\u202f14) and physical core speed Nc (sensor\u202f9) as the control system compensates\u30102\u3011.",
+      "reference": "Rising T30 and T50 temperatures, rising Ps30, falling phi and falling W31/W32 coolant bleeds, with core speed drifting up.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5130244275592298,
+      "llm_context_precision_with_reference": 0.6791666666496875
+    },
+    {
+      "user_input": "What should I do when an engine is in warning status?",
+      "response": "- Schedule a borescope inspection within\u202f10\u202fcycles.  \n- Order the HPC blade kit.  \n- Increase monitoring to every cycle. [1]",
+      "reference": "Schedule a borescope inspection within 10 cycles, order the HPC blade kit and increase monitoring to every cycle.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.34757247444285705,
+      "llm_context_precision_with_reference": 0.8874999999778125
+    },
+    {
+      "user_input": "What is the action for a critical engine?",
+      "response": "The engine should be removed at the next maintenance window. [5]",
+      "reference": "Plan removal at the next maintenance opportunity and do not exceed 15 further cycles without engineering approval.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.46538817143287853,
+      "llm_context_precision_with_reference": 0.19999999998
+    },
+    {
+      "user_input": "What does an anomaly alert mean?",
+      "response": "An anomaly alert indicates that the sensor pattern has moved outside the healthy envelope (unsupervised score above threshold for three consecutive cycles)\u202f[1]. It does not imply an imminent failure; instead, it should trigger an engineering review of the trend plots, even if the RUL status remains Healthy\u202f[1].",
+      "reference": "The sensor pattern left the healthy envelope for 3 consecutive cycles; it triggers an engineering review, not necessarily imminent failure.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8318145335069944,
+      "llm_context_precision_with_reference": 0.9999999999666667
+    },
+    {
+      "user_input": "How do I tell a sensor fault from real engine degradation?",
+      "response": "Sensor faults show up as sudden, isolated outliers that do not follow the slow, monotonic drift seen in real degradation, which is modeled as gradual changes in flow and efficiency and reflected in a steadily decreasing health index\u202f[3][1]. Real engine degradation produces systematic signatures such as an upward drift of r\u2089, changes in bypass\u2011ratio (sensor\u202f15) and corrected fan speed (sensor\u202f13) that differ from the HPC pattern\u202f[2]. If a measurement deviates abruptly while other correlated parameters remain on their expected degradation trend, treat it as a sensor fault and verify or replace the sensor\u202f[5].",
+      "reference": "Compare the channel with physically related channels; a single channel jumping while related channels are steady indicates a sensor fault.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8833657284582809,
+      "llm_context_precision_with_reference": 0.4499999999775
+    },
+    {
+      "user_input": "When is a compressor wash useful?",
+      "response": "A compressor wash is useful when the engine\u2019s T30 margin has dropped due to fouling (not erosion) and a borescope inspection shows no mechanical damage to the HPC blades\u30101\u3011.",
+      "reference": "When degradation is caused by fouling rather than erosion: T30 margin drops but the borescope shows no mechanical damage. It can recover 1-2% HPC efficiency.",
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.9502413467994594,
+      "llm_context_precision_with_reference": 0.99999999998
+    },
+    {
+      "user_input": "How long must the engine cool before a borescope inspection?",
+      "response": "The engine must be shut down and cooled for **at least\u202f45\u202fminutes** before performing a borescope inspection\u30101\u3011.",
+      "reference": "At least 45 minutes.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9351027628557711,
+      "llm_context_precision_with_reference": 0.9999999999
+    },
+    {
+      "user_input": "Which HPC stages are inspected with the borescope?",
+      "response": "The borescope inspection covers HPC stages\u202f3,\u202f5\u202fand\u202f7\u30101\u3011.",
+      "reference": "Stages 3, 5 and 7.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9627004319830313,
+      "llm_context_precision_with_reference": 0.9999999999
+    },
+    {
+      "user_input": "Why can't raw sensor values be compared across FD002 engines?",
+      "response": "Raw sensor readings change with altitude, Mach number and throttle settings, so they differ between the six operating conditions of FD002 engines; therefore values must be compared only within the same condition and cannot be directly compared across conditions without normalisation [1].",
+      "reference": "FD002 runs across six operating conditions, so values must be compared within the same condition or normalised.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8334503771487589,
+      "llm_context_precision_with_reference": 0.9999999999
+    },
+    {
+      "user_input": "What fault modes are in FD003?",
+      "response": "FD003 includes an additional fan\u2011degradation fault mode, observable as changes in bypass\u2011ratio (sensor\u202f15) and corrected fan speed (sensor\u202f13) that differ from the HPC pattern, alongside the engine\u2019s other standard fault mode(s)\u30101\u3011.",
+      "reference": "HPC degradation and fan degradation.",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.9405059272942639,
+      "llm_context_precision_with_reference": 0.0
+    },
+    {
+      "user_input": "How are technicians identified in maintenance logs?",
+      "response": "Technicians are pseudonymised in the logs; their names are replaced with role tokens such as\u202fTECH_07,\u202fTECH_02, etc.\u202f[1][2]",
+      "reference": "They are pseudonymised with role tokens such as TECH_07 before indexing.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9252743587138662,
+      "llm_context_precision_with_reference": 0.94999999997625
+    },
+    {
+      "user_input": "What damage propagation model did NASA use to simulate degradation in C-MAPSS?",
+      "response": "NASA modeled degradation with an exponential damage\u2011propagation model, using a generalized wear equation\u202fw\u202f=\u202fA\u202fe^{B(t)} and converting it to a health index\u202fh(t)\u202f=\u202f1\u202f\u2013\u202fA\u202fe^{B(t)}/thw\u202f[1].",
+      "reference": "An exponential degradation model of health parameters such as flow and efficiency, with noise, in the C-MAPSS simulation.",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.5043177003670221,
+      "llm_context_precision_with_reference": 0.9999999999
+    },
+    {
+      "user_input": "Which engine data rows are quarantined by the pipeline?",
+      "response": "- FD001_test_037\u202f|\u202f2026\u201104\u201122\u202f|\u202fcycle\u202f107\u202f|\u202fEngine flagged critical by ThermalGuard; removal planned\u202f[1]  \n- FD001_test_066\u202f|\u202f2026\u201105\u201102\u202f|\u202fcycle\u202f117\u202f|\u202fEngine flagged critical by ThermalGuard; removal planned\u202f[2]  \n- FD001_test_064\u202f|\u202f2026\u201106\u201102\u202f|\u202fcycle\u202f148\u202f|\u202fBorescope HPC severe erosion; recommend removal\u202f[3]  \n- FD001_test_064\u202f|\u202f2026\u201106\u201120\u202f|\u202fcycle\u202f166\u202f|\u202fBorescope HPC severe erosion; recommend removal\u202f[3]",
+      "reference": "Rows with impossible values such as negative temperatures, values above physical limits, or missing channels.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.35391763870422394,
+      "llm_context_precision_with_reference": 0.0
+    }
+  ]
+}

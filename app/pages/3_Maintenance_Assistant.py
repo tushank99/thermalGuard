@@ -46,6 +46,12 @@ def render(turn: dict) -> None:
 for turn in st.session_state.chat:
     render(turn)
 
+MAX_QUESTIONS = 15  # per visitor session: keeps a public demo inside the free LLM quota
+asked = sum(t["role"] == "user" for t in st.session_state.chat)
+if asked >= MAX_QUESTIONS:
+    st.info(f"Demo limit of {MAX_QUESTIONS} questions per session reached (free-tier LLM). Thanks for trying it!")
+    st.stop()
+
 if q := st.chat_input("Ask about an engine, a procedure or a sensor…"):
     st.session_state.chat.append({"role": "user", "content": q})
     render(st.session_state.chat[-1])
